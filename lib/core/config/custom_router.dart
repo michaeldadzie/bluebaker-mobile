@@ -1,3 +1,4 @@
+import 'package:bluebaker/core/nav/page/bottom_nav_screen.dart';
 import 'package:bluebaker/core/onboarding/pages/onboard.dart';
 import 'package:bluebaker/core/screens/error.dart';
 import 'package:bluebaker/core/screens/splash.dart';
@@ -16,6 +17,8 @@ class CustomRouter {
         return OnboardScreen.route();
       case SplashScreen.routeName:
         return SplashScreen.route();
+      case BottomNavScreen.routeName:
+        return BottomNavScreen.route();
       default:
         return _errorRoute();
     }
