@@ -1,3 +1,5 @@
+import 'package:bluebaker/core/nav/page/bottom_nav_screen.dart';
+
 import '/core/onboarding/utils/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,12 +25,12 @@ class _IntroState extends State<Intro> {
     },
     {
       "text1": "Explore BlueBaker Fashion",
-      "text2": "Explore the 2021\'s newest fashion with our new collection",
+      "text2": "Explore the 2021's newest fashion with our new collection",
       "image": "assets/images/mask.png"
     },
     {
-      "text1": "Feel Comfort & Good",
-      "text2": "Something came up? Talk to a professional chef to guide you",
+      "text1": "Explore BlueBaker Fashion",
+      "text2": "Explore the 2021's newest fashion with our new collection",
       "image": "assets/images/man.png"
     },
   ];
@@ -82,9 +84,9 @@ class _IntroState extends State<Intro> {
                   setState(() {
                     onAddButtonTapped(currentPage + 1);
                     if (currentPage == 2) {
-                      // Navigator.of(context).pushReplacementNamed(
-                      //   WelcomeScreen.routeName,
-                      // );
+                      Navigator.of(context).pushReplacementNamed(
+                        BottomNavScreen.routeName,
+                      );
                     }
                   });
                 },

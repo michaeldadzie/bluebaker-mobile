@@ -1,3 +1,4 @@
+import 'package:bluebaker/core/nav/page/bottom_nav_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -16,12 +17,19 @@ class SplashScreen extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
-          body: Center(
+        body: Center(
+          child: GestureDetector(
+            onTap: () {
+              // Future.delayed(const Duration(seconds: 1), () {
+              Navigator.of(context).pushNamed(BottomNavScreen.routeName);
+              // });
+            },
             child: CircularProgressIndicator(
               color: Colors.blue.shade600,
             ),
           ),
-        )
+        ),
+      ),
     );
   }
 }
