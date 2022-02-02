@@ -30,7 +30,7 @@
 .pub-cache/
 .pub/
 /build/
-
+.fvm
 # Firebase Config related
 GoogleService-Info.xml
 google-services.json
