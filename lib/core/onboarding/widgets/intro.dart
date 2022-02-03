@@ -1,8 +1,7 @@
-import 'package:bluebaker/core/nav/page/bottom_nav_screen.dart';
-
-import '/core/onboarding/utils/screen_size.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '/features/auth/presentation/pages/welcome.dart';
 
 import 'intro_content.dart';
 
@@ -58,19 +57,24 @@ class _IntroState extends State<Intro> {
         ),
         Padding(
           padding: EdgeInsets.only(
-              bottom: getProportionateScreenHeight(40),
-              left: getProportionateScreenWidth(20),
-              right: getProportionateScreenWidth(20),
-              top: getProportionateScreenHeight(80)),
+            bottom: 40.h,
+            left: 20.w,
+            right: 20.w,
+            top: 80.h,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Skip',
-                style: GoogleFonts.lato(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).focusColor),
+              GestureDetector(
+                onTap: () => Navigator.of(context)
+                    .pushReplacementNamed(WelcomeScreen.routeName),
+                child: Text(
+                  'Skip',
+                  style: GoogleFonts.lato(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).focusColor),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -85,25 +89,25 @@ class _IntroState extends State<Intro> {
                     onAddButtonTapped(currentPage + 1);
                     if (currentPage == 2) {
                       Navigator.of(context).pushReplacementNamed(
-                        BottomNavScreen.routeName,
+                        WelcomeScreen.routeName,
                       );
                     }
                   });
                 },
                 child: CircleAvatar(
-                  radius: getProportionateScreenHeight(20),
+                  radius: 20.r,
                   backgroundColor: Theme.of(context).focusColor,
                   child: currentPage == 2
                       ? Text(
                           'Start',
                           style: GoogleFonts.lato(
-                              fontSize: 12,
+                              fontSize: 12.sp,
                               // fontWeight: FontWeight.w500,
                               color: Theme.of(context).primaryColor),
                         )
                       : Icon(
                           Icons.arrow_forward_ios,
-                          size: 15,
+                          size: 15.sp,
                           color: Theme.of(context).primaryColor,
                         ),
                 ),
@@ -126,12 +130,12 @@ class _IntroState extends State<Intro> {
       duration: const Duration(milliseconds: 200),
       margin: const EdgeInsets.only(right: 5),
       height: 6,
-      width: currentPage == index ? 20 : 6,
+      width: currentPage == index ? 20.w : 6.w,
       decoration: BoxDecoration(
         color: currentPage == index
             ? Theme.of(context).focusColor
             : const Color(0xFFD8D8D8),
-        borderRadius: BorderRadius.circular(3),
+        borderRadius: BorderRadius.circular(3.r),
       ),
     );
   }

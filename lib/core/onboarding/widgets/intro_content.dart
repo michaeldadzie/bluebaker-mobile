@@ -1,4 +1,4 @@
-import '/core/onboarding/utils/screen_size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,16 +25,16 @@ class IntroContent extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: getProportionateScreenHeight(20)),
+        SizedBox(height: 20.h),
         Padding(
           padding: EdgeInsets.only(
-            left: getProportionateScreenWidth(20),
-            right: getProportionateScreenWidth(20),
+            left: 20.w,
+            right: 20.w,
           ),
           child: Text(
             text1,
             style: GoogleFonts.raleway(
-              fontSize: 25,
+              fontSize: 25.sp,
               fontWeight: FontWeight.bold,
               color: Theme.of(context).focusColor,
             ),
@@ -42,16 +42,16 @@ class IntroContent extends StatelessWidget {
             maxLines: 2,
           ),
         ),
-        SizedBox(height: getProportionateScreenHeight(20)),
+        SizedBox(height: 20.h),
         Padding(
           padding: EdgeInsets.only(
-            left: getProportionateScreenWidth(20),
-            right: getProportionateScreenWidth(20),
+            left: 20.w,
+            right: 20.w,
           ),
           child: Text(
             text2,
             style: GoogleFonts.raleway(
-              fontSize: 16,
+              fontSize: 16.sp,
               // fontWeight: FontWeight.bold,
               color: Colors.grey.shade600,
             ),
