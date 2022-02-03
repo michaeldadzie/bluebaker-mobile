@@ -14,6 +14,8 @@ import 'core/utils/theme.dart';
 import 'features/auth/data/repositories/auth_repository.dart';
 import 'features/auth/presentation/bloc/auth/auth_bloc.dart';
 import 'features/auth/presentation/bloc/observer/simple_bloc_observer.dart';
+import 'features/home/data/repositories/storage/storage_repository.dart';
+import 'features/home/data/repositories/user/user_repository.dart';
 
 late int? onboard;
 Future<void> main() async {
@@ -43,6 +45,12 @@ class BlueBaker extends StatelessWidget {
       providers: [
         RepositoryProvider<AuthRepository>(
           create: (_) => AuthRepository(),
+        ),
+        RepositoryProvider<UserRepository>(
+          create: (_) => UserRepository(),
+        ),
+        RepositoryProvider<StorageRepository>(
+          create: (_) => StorageRepository(),
         ),
       ],
       child: MultiBlocProvider(
