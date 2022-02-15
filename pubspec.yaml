@@ -53,3 +53,8 @@ flutter:
     - assets/images/
     - assets/load/
 
+  fonts:
+    - family: BlueBakerIcon
+      fonts:
+        - asset: assets/fonts/BlueBakerIcon.ttf
+
