@@ -7,12 +7,16 @@ class CustomButton extends StatelessWidget {
   final Color bordersideColor;
   final Color? backgroundColor;
   final Color textColor;
+  final double? radius;
+  final double? fontsize;
   final Function() onPress;
   const CustomButton({
     required this.title,
     required this.bordersideColor,
     this.backgroundColor,
     required this.textColor,
+    this.radius = 10,
+    this.fontsize = 16,
     required this.onPress,
     Key? key,
   }) : super(key: key);
@@ -31,7 +35,7 @@ class CustomButton extends StatelessWidget {
             bottom: 16.h,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(radius!.r),
           ),
           backgroundColor: backgroundColor,
           enableFeedback: true,
@@ -44,7 +48,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           title!,
           style: GoogleFonts.poppins(
-            fontSize: 16.sp,
+            fontSize: fontsize!.sp,
             fontWeight: FontWeight.w600,
             color: textColor,
           ),
