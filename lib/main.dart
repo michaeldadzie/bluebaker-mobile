@@ -11,11 +11,12 @@ import 'core/onboarding/pages/onboard.dart';
 import 'core/screens/splash.dart';
 import 'core/config/custom_router.dart';
 import 'core/utils/theme.dart';
+import 'features/account/data/repositories/storage/storage_repository.dart';
+import 'features/account/data/repositories/user/user_repository.dart';
 import 'features/auth/data/repositories/auth_repository.dart';
 import 'features/auth/presentation/bloc/auth/auth_bloc.dart';
 import 'features/auth/presentation/bloc/observer/simple_bloc_observer.dart';
-import 'features/home/data/repositories/storage/storage_repository.dart';
-import 'features/home/data/repositories/user/user_repository.dart';
+import 'features/bluebaker/data/repositories/bluebaker_repository.dart';
 
 late int? onboard;
 Future<void> main() async {
@@ -51,6 +52,9 @@ class BlueBaker extends StatelessWidget {
         ),
         RepositoryProvider<StorageRepository>(
           create: (_) => StorageRepository(),
+        ),
+        RepositoryProvider<BlueBakerRepository>(
+          create: (_) => BlueBakerRepository(),
         ),
       ],
       child: MultiBlocProvider(
