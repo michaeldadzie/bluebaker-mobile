@@ -1,3 +1,5 @@
+import 'package:bluebaker/core/utils/blue_baker_icon_icons.dart';
+
 import '/core/nav/cubit/bottom_nav_bar_cubit.dart';
 import '/core/nav/enums/bottom_nav_item.dart';
 import '/core/nav/widgets/bottom_nav_bar.dart';
@@ -24,13 +26,17 @@ class BottomNavScreen extends StatelessWidget {
   final Map<BottomNavItem, GlobalKey<NavigatorState>> navigatorKeys = {
     BottomNavItem.home: GlobalKey<NavigatorState>(),
     BottomNavItem.explore: GlobalKey<NavigatorState>(),
+    BottomNavItem.bluebaker: GlobalKey<NavigatorState>(),
     BottomNavItem.wishlist: GlobalKey<NavigatorState>(),
+    BottomNavItem.account: GlobalKey<NavigatorState>(),
   };
 
   final Map<BottomNavItem, IconData> items = {
     BottomNavItem.home: FeatherIcons.home,
     BottomNavItem.explore: FeatherIcons.search,
+    BottomNavItem.bluebaker: BlueBakerIcon.logo_2,
     BottomNavItem.wishlist: FeatherIcons.bookmark,
+    BottomNavItem.account: FeatherIcons.user,
   };
 
   @override
