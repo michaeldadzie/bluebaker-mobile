@@ -2,12 +2,18 @@ import 'package:bluebaker/core/nav/page/bottom_nav_screen.dart';
 import 'package:bluebaker/core/onboarding/pages/onboard.dart';
 import 'package:bluebaker/core/screens/error.dart';
 import 'package:bluebaker/core/screens/splash.dart';
+import 'package:bluebaker/features/account/presentation/pages/account_details.dart';
+import 'package:bluebaker/features/account/presentation/pages/edit_profile.dart';
 import 'package:bluebaker/features/auth/presentation/pages/login.dart';
 import 'package:bluebaker/features/auth/presentation/pages/signup.dart';
 import 'package:bluebaker/features/auth/presentation/pages/welcome.dart';
-import 'package:bluebaker/features/home/presentation/pages/settings/account.dart';
-import 'package:bluebaker/features/home/presentation/pages/settings/edit_profile.dart';
-import 'package:bluebaker/features/home/presentation/pages/settings.dart';
+import 'package:bluebaker/features/bluebaker/presentation/pages/bluebaker_category.dart';
+import 'package:bluebaker/features/explore/presentation/pages/collections/collection_category.dart';
+import 'package:bluebaker/features/explore/presentation/pages/collections/item_detail.dart';
+import 'package:bluebaker/features/explore/presentation/pages/search/search.dart';
+import 'package:bluebaker/features/explore/presentation/pages/videos/videos.dart';
+import 'package:bluebaker/features/explore/presentation/pages/collections/collections.dart';
+import 'package:bluebaker/features/wishlist/pages/user_wishlist.dart';
 import 'package:flutter/material.dart';
 
 class CustomRouter {
@@ -39,15 +45,45 @@ class CustomRouter {
   static Route onGenerateNestedRoute(RouteSettings settings) {
     print('NestedRoute: ${settings.name}');
     switch (settings.name) {
-      // Home Routes
-      case Settings.routeName:
-        return Settings.route();
-      // Sub-Home Routes
+      // Account Routes
       case EditProfile.routeName:
-        return EditProfile.route(args: settings.arguments as EditProfileArgs);
-      case Account.routeName:
-        return Account.route(args: settings.arguments as AccountArgs);
+        return EditProfile.route(
+          args: settings.arguments as EditProfileArgs,
+        );
+      case AccountDetails.routeName:
+        return AccountDetails.route(
+          args: settings.arguments as AccountDetailsArgs,
+        );
 
+      // Bluebaker Routes
+      case BlueBakerCategory.routeName:
+        return BlueBakerCategory.route(
+          args: settings.arguments as BlueBakerCategoryArgs,
+        );
+
+      // Explore Routes
+      case Search.routeName:
+        return Search.route();
+      case Collections.routeName:
+        return Collections.route();
+      case Videos.routeName:
+        return Videos.route();
+
+      // Sub-Explore Routes
+      case CollectionCategory.routeName:
+        return CollectionCategory.route(
+          args: settings.arguments as CollectionCategoryArgs,
+        );
+      case ItemDetails.routeName:
+        return ItemDetails.route(
+          args: settings.arguments as ItemDetailsArgs,
+        );
+        
+      // Wishlist Routes
+      case UserWishlist.routeName:
+        return UserWishlist.route(
+          args: settings.arguments as UserWishlistArgs,
+        );
       default:
         return _errorRoute();
     }
