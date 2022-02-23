@@ -33,6 +33,11 @@ dependencies:
   flutter_screenutil: ^5.1.1
 
   shared_preferences: ^2.0.12
+
+  chewie: ^1.3.0
+  video_player: ^2.2.18
+
+  http: ^0.13.4
   
   flutter:
     sdk: flutter
