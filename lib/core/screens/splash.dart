@@ -26,7 +26,7 @@ class SplashScreen extends StatelessWidget {
             Navigator.of(context).pushNamed(WelcomeScreen.routeName);
           } else if (state.status == AuthStatus.authenticated) {
             // Go to Bottom Nav Bar
-            Future.delayed(const Duration(seconds: 0), () {
+            Future.delayed(const Duration(seconds: 3), () {
               Navigator.of(context).pushNamed(BottomNavScreen.routeName);
             });
           }
