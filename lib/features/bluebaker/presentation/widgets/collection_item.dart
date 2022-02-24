@@ -1,8 +1,8 @@
-import 'package:bluebaker/features/explore/presentation/pages/collections/collection_category.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../pages/collections/collection_category.dart';
 
 class CollectionItem extends StatelessWidget {
   const CollectionItem({
@@ -32,7 +32,7 @@ class CollectionItem extends StatelessWidget {
       child: Column(
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(10.r),
             child: Stack(
               children: [
                 SizedBox(

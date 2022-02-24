@@ -2,7 +2,7 @@ import 'package:bluebaker/core/widgets/error_dialog.dart';
 import 'package:bluebaker/features/auth/presentation/bloc/auth/auth_bloc.dart';
 import 'package:bluebaker/features/bluebaker/data/repositories/bluebaker_repository.dart';
 import 'package:bluebaker/features/bluebaker/presentation/bloc/bluebaker_bloc.dart';
-import 'package:bluebaker/features/explore/presentation/widgets/collection_item.dart';
+import 'package:bluebaker/features/bluebaker/presentation/widgets/collection_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

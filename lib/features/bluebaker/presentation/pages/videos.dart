@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../widgets/video_item.dart';
 
 class Videos extends StatelessWidget {
   static const String routeName = '/videos';
@@ -22,9 +23,22 @@ class Videos extends StatelessWidget {
         title: Text(
           'Videos',
           style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w600,
-              fontSize: 18.sp,
-              color: Theme.of(context).focusColor),
+            fontWeight: FontWeight.w600,
+            fontSize: 18.sp,
+            color: Theme.of(context).focusColor,
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(left: 20.w, right: 20.w),
+            child: Column(
+              children: const [
+                VideoItem(),
+              ],
+            ),
+          ),
         ),
       ),
     );
