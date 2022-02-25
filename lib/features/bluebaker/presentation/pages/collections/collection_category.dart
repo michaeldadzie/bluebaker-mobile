@@ -1,10 +1,9 @@
-import 'dart:developer';
 import 'package:bluebaker/core/widgets/error_dialog.dart';
 import 'package:bluebaker/features/auth/presentation/bloc/auth/auth_bloc.dart';
 import 'package:bluebaker/features/bluebaker/data/repositories/bluebaker_repository.dart';
 import 'package:bluebaker/features/bluebaker/data/models/item_model.dart';
 import 'package:bluebaker/features/bluebaker/presentation/bloc/bluebaker_bloc.dart';
-import 'package:bluebaker/features/explore/presentation/widgets/collection_category_item.dart';
+import 'package:bluebaker/features/bluebaker/presentation/widgets/collection_category_item.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -77,15 +76,15 @@ class _CollectionCategoryState extends State<CollectionCategory> {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            title: Text(
-              'BlueBaker',
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w600,
-                fontSize: 18.sp,
-                color: Theme.of(context).focusColor,
+              // title: Text(
+              //   'BlueBaker',
+              //   style: GoogleFonts.poppins(
+              //     fontWeight: FontWeight.w600,
+              //     fontSize: 18.sp,
+              //     color: Theme.of(context).focusColor,
+              //   ),
+              // ),
               ),
-            ),
-          ),
           body: SafeArea(
             child: SingleChildScrollView(
               child: Column(
