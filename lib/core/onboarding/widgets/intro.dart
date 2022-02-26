@@ -120,7 +120,7 @@ class _IntroState extends State<Intro> {
   }
 
   void onAddButtonTapped(index) {
-    // use this to animate to the page
+    // Use this to animate to the page
     _controller.animateToPage(index,
         duration: const Duration(milliseconds: 500), curve: Curves.ease);
   }
@@ -134,7 +134,7 @@ class _IntroState extends State<Intro> {
       decoration: BoxDecoration(
         color: currentPage == index
             ? Theme.of(context).focusColor
-            : const Color(0xFFD8D8D8),
+            : Theme.of(context).hoverColor,
         borderRadius: BorderRadius.circular(3.r),
       ),
     );
