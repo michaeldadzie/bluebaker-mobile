@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:bluebaker/features/auth/presentation/bloc/auth/auth_bloc.dart';
 import 'package:bluebaker/features/bluebaker/data/repositories/bluebaker_repository.dart';
-import 'package:bluebaker/features/explore/presentation/widgets/collection_category_item.dart';
+import 'package:bluebaker/features/bluebaker/presentation/widgets/collection_category_item.dart';
 import 'package:bluebaker/features/wishlist/bloc/wishlist_bloc.dart';
 import 'package:bluebaker/features/wishlist/widgets/user_wishlist_item.dart';
 import 'package:flutter/cupertino.dart';
@@ -77,26 +77,14 @@ class _UserWishlistState extends State<UserWishlist> {
         );
       case WishlistStatus.error:
         return Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.bookmark_outline,
-                color: Theme.of(context).focusColor,
-              ),
-              SizedBox(height: 20.h),
-              Text(
-                state.failure.message.toUpperCase(),
-                style: GoogleFonts.lato(
-                  color: Theme.of(context).focusColor,
-                  fontSize: 10.sp,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
+            child: Text(
+          state.failure.message,
+          style: GoogleFonts.raleway(
+            color: Theme.of(context).focusColor,
+            fontSize: 14.sp,
           ),
-        );
+          textAlign: TextAlign.center,
+        ));
       default:
         return GridView.builder(
           padding: EdgeInsets.all(20.h),
