@@ -1,11 +1,11 @@
 import 'package:bluebaker/features/auth/presentation/utils/const.dart';
-import 'package:bluebaker/features/explore/presentation/pages/collections/collections.dart';
-import 'package:bluebaker/features/explore/presentation/pages/search/search.dart';
-import 'package:bluebaker/features/explore/presentation/pages/videos/videos.dart';
-import 'package:bluebaker/features/explore/presentation/widgets/header_item.dart';
+import 'package:bluebaker/features/explore/presentation/pages/search.dart';
+import 'package:bluebaker/features/explore/presentation/pages/search_trends.dart';
+import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Explore extends StatefulWidget {
   const Explore({Key? key}) : super(key: key);
@@ -15,6 +15,28 @@ class Explore extends StatefulWidget {
 }
 
 class _ExploreState extends State<Explore> {
+  late int? trend;
+
+  @override
+  void initState() {
+    _loadRecentSearch();
+    super.initState();
+  }
+
+  _loadRecentSearch() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      trend = prefs.getInt("trend");
+    });
+  }
+
+  _addToRecentSearch(int number) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      prefs.setInt("trend", number);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,14 +62,17 @@ class _ExploreState extends State<Explore> {
                 keyboardType: TextInputType.text,
                 readOnly: true,
                 onTap: () {
-                  Navigator.of(context).pushNamed(Search.routeName);
+                  Navigator.of(context).pushNamed(
+                    Search.routeName,
+                  );
                 },
                 decoration: textFormFieldDecoration.copyWith(
                   hintText: 'Search BlueBaker',
                   fillColor: Theme.of(context).hoverColor,
                   prefixIcon: Icon(
-                    Icons.search,
+                    FeatherIcons.search,
                     color: Colors.grey.shade600,
+                    size: 25.h,
                   ),
                   hintStyle: GoogleFonts.lato(
                     fontSize: 14.sp,
@@ -66,117 +91,99 @@ class _ExploreState extends State<Explore> {
         ),
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildHeaderItem(),
-              // SizedBox(height: 30.h),
-              // _buildTrends()
-            ],
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(top: 20.h, left: 20.w, right: 20.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(flex: 1, child: Container()),
+                    Expanded(
+                      flex: 3,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Trends',
+                            style: GoogleFonts.lato(
+                              color: Theme.of(context).focusColor,
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              _trend('Dress', 1),
+                              _trend('Mask', 2),
+                              _trend('Shirt', 3),
+                              _trend('Swimsuit', 4),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            // TODO: Fix Recent Search state
+            Padding(
+              padding: EdgeInsets.only(
+                bottom: 40.h,
+                left: 20.w,
+                right: 20.w,
+              ),
+              child: trend == 0 || trend == null
+                  ? Container()
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Recent Search',
+                          style: GoogleFonts.lato(
+                            color: Theme.of(context).focusColor,
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        if (trend == 1) _trend('Dress', 1),
+                        if (trend == 2) _trend('Mask', 2),
+                        if (trend == 3) _trend('Shirt', 3),
+                        if (trend == 4) _trend('Swimsuit', 4),
+                      ],
+                    ),
+            ),
+          ],
         ),
       ),
     );
   }
 
-  Widget _buildHeaderItem() {
-    return SizedBox(
-      height: 60.h,
-      child: GridView(
-        padding: EdgeInsets.only(top: 20.h, left: 20.w, right: 20.w),
-        // controller: _scrollController,
-        physics: const ScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        shrinkWrap: true,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 2 / 7,
-          crossAxisCount: 1,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
-        children: [
-          HeaderItem(
-            title: 'Collections',
-            tap: () {
-              Navigator.of(context).pushNamed(Collections.routeName);
-            },
-          ),
-          HeaderItem(
-            title: 'Videos',
-            tap: () {
-              Navigator.of(context).pushNamed(Videos.routeName);
-            },
-          ),
-          HeaderItem(
-            title: 'Editors\'s picks',
-            tap: () {},
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTrends() {
+  Widget _trend(String name, int number) {
     return Padding(
-      padding: EdgeInsets.only(right: 20.w, left: 20.w),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Accessories',
-            style: GoogleFonts.lato(
-              fontSize: 16.sp,
-              color: Theme.of(context).focusColor,
-              fontWeight: FontWeight.w400,
+      padding: EdgeInsets.only(top: 20.h),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.of(context).pushNamed(
+            SearchTrends.routeName,
+            arguments: SearchTrendsArgs(
+              id: name,
             ),
+          );
+          _addToRecentSearch(number);
+        },
+        child: Text(
+          name,
+          style: GoogleFonts.lato(
+            color: Theme.of(context).focusColor,
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w400,
           ),
-          SizedBox(height: 20.h),
-          Text(
-            'Swim',
-            style: GoogleFonts.lato(
-              fontSize: 16.sp,
-              color: Theme.of(context).focusColor,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          SizedBox(height: 20.h),
-          Text(
-            'Mask',
-            style: GoogleFonts.lato(
-              fontSize: 16.sp,
-              color: Theme.of(context).focusColor,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          SizedBox(height: 20.h),
-          Text(
-            'Kaftan',
-            style: GoogleFonts.lato(
-              fontSize: 16.sp,
-              color: Theme.of(context).focusColor,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          SizedBox(height: 20.h),
-          Text(
-            'Dress',
-            style: GoogleFonts.lato(
-              fontSize: 16.sp,
-              color: Theme.of(context).focusColor,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          SizedBox(height: 20.h),
-          Text(
-            'T-Shirts',
-            style: GoogleFonts.lato(
-              fontSize: 16.sp,
-              color: Theme.of(context).focusColor,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
