@@ -1,6 +1,7 @@
 import 'package:bluebaker/core/widgets/error_dialog.dart';
 import 'package:bluebaker/features/account/presentation/bloc/profile_bloc.dart';
 import 'package:bluebaker/features/account/presentation/pages/account_details.dart';
+import 'package:bluebaker/features/account/presentation/pages/privacy_policy.dart';
 import 'package:bluebaker/features/account/presentation/widgets/list_tile.dart';
 import 'package:bluebaker/features/account/presentation/widgets/profile_image.dart';
 import 'package:flutter/gestures.dart';
@@ -101,7 +102,8 @@ class _SettingsState extends State<Account> {
                           TextSpan(
                             text: 'Privacy Policy',
                             recognizer: TapGestureRecognizer()
-                              ..onTap = () => print('Open privacy policy'),
+                              ..onTap = () => Navigator.of(context)
+                                  .pushNamed(PrivacyPolicy.routeName),
                             style: GoogleFonts.lato(
                               fontWeight: FontWeight.w300,
                               fontSize: 13.sp,
@@ -225,4 +227,40 @@ class _SettingsState extends State<Account> {
         );
     }
   }
+
+  // void _showPrivacyPolicy(BuildContext ctx) {
+  //   showModalBottomSheet(
+  //     elevation: 10,
+  //     backgroundColor: Theme.of(context).primaryColor,
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.only(
+  //         topLeft: Radius.circular(15.r),
+  //         topRight: Radius.circular(15.r),
+  //       ),
+  //     ),
+  //     context: ctx,
+  //     builder: (ctx) => Padding(
+  //       padding: EdgeInsets.only(left: 20.w, right: 20.w),
+  //       child: SizedBox(
+  //         width: MediaQuery.of(context).size.width.w,
+  //         height: MediaQuery.of(context).size.height.h,
+  //         child: SingleChildScrollView(
+  //           child: Column(
+  //             children: [
+  //               SizedBox(height: 20.h),
+  //               Text(
+  //                 'state.user.email',
+  //                 style: GoogleFonts.poppins(
+  //                   fontWeight: FontWeight.w400,
+  //                   fontSize: 16.sp,
+  //                   color: Colors.grey.shade600,
+  //                 ),
+  //               ),
+  //             ],
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 }
