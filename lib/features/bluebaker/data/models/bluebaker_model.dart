@@ -4,25 +4,25 @@ import 'package:equatable/equatable.dart';
 class BlueBaker extends Equatable {
   const BlueBaker({
     required this.id,
-    // required this.photoUrl,
+    required this.photoUrl,
     required this.title,
   });
 
   final String id;
-  // final String photoUrl;
+  final String photoUrl;
   final String title;
 
   @override
-  List<Object?> get props => [id, /*photoUrl,*/ title];
+  List<Object?> get props => [id, photoUrl, title];
 
   BlueBaker copyWith({
     String? id,
-    // String? photoUrl,
+    String? photoUrl,
     String? title,
   }) {
     return BlueBaker(
       id: id ?? this.id,
-      // photoUrl: photoUrl ?? this.photoUrl,
+      photoUrl: photoUrl ?? this.photoUrl,
       title: title ?? this.title,
     );
   }
@@ -30,7 +30,7 @@ class BlueBaker extends Equatable {
   Map<String, dynamic> toDocument() {
     return {
       'title': title,
-      // 'photoUrl': photoUrl,
+      'photoUrl': photoUrl,
       'id': id,
     };
   }
@@ -39,7 +39,7 @@ class BlueBaker extends Equatable {
     final data = doc.data() as Map<String, dynamic>;
     return BlueBaker(
       id: data['id'] ?? '',
-      // photoUrl: data['photoUrl'] ?? '',
+      photoUrl: data['photoUrl'] ?? '',
       title: data['title'] ?? '',
     );
   }
