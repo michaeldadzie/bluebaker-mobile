@@ -1,4 +1,4 @@
-import 'package:bluebaker/features/bluebaker/presentation/pages/bluebaker_category.dart';
+import 'package:bluebaker/features/bluebaker/presentation/pages/bluebaker/bluebaker_category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,28 +15,22 @@ class BlueBakerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: ThemeData(
-        highlightColor: Colors.transparent,
-        splashColor: Colors.transparent,
-      ),
-      child: ListTile(
-        contentPadding: EdgeInsets.zero,
-        title: Text(
-          title,
-          style: GoogleFonts.lato(
-            color: Theme.of(context).focusColor,
-            fontSize: 18.h,
-          ),
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      title: Text(
+        title,
+        style: GoogleFonts.lato(
+          color: Theme.of(context).focusColor,
+          fontSize: 18.h,
         ),
-        enableFeedback: true,
-        onTap: () {
-          Navigator.of(context).pushNamed(
-            BlueBakerCategory.routeName,
-            arguments: BlueBakerCategoryArgs(id: id),
-          );
-        },
       ),
+      enableFeedback: true,
+      onTap: () {
+        Navigator.of(context).pushNamed(
+          BlueBakerCategory.routeName,
+          arguments: BlueBakerCategoryArgs(id: id),
+        );
+      },
     );
   }
 }
