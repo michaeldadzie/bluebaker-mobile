@@ -1,5 +1,7 @@
 import 'package:bluebaker/core/widgets/error_dialog.dart';
 import 'package:bluebaker/features/bluebaker/presentation/bloc/bluebaker_bloc.dart';
+import 'package:bluebaker/features/bluebaker/presentation/pages/bluebaker/bluebaker_life.dart';
+import 'package:bluebaker/features/bluebaker/presentation/widgets/bluebaker_alt_item.dart';
 import 'package:bluebaker/features/bluebaker/presentation/widgets/bluebaker_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,15 +46,35 @@ class _BlueBakerState extends State<BlueBaker> {
           ),
           body: SafeArea(
             child: SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.only(left: 20.w, right: 20.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 30.h),
-                    _buildBody(state),
-                  ],
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 20.w, right: 20.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 35.h),
+                        _buildBody(state),
+                        SizedBox(height: 35.h),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width.w,
+                    color: Colors.blue.shade300,
+                    child: BlueBakerAltItem(
+                      title: 'Sale',
+                      onTap: () {},
+                    ),
+                  ),
+                  BlueBakerAltItem(
+                    title: 'BlueBaker Life',
+                    onTap: () => Navigator.of(context).pushNamed(
+                      BlueBakerLife.routeName,
+                    ),
+                  )
+                ],
               ),
             ),
           ),
@@ -74,8 +96,6 @@ class _BlueBakerState extends State<BlueBaker> {
           physics: const NeverScrollableScrollPhysics(),
           padding: EdgeInsets.zero,
           // controller: _scrollController,
-          // physics: const BouncingScrollPhysics(
-          //     parent: AlwaysScrollableScrollPhysics()),
           itemCount: state.bluebaker.length,
           shrinkWrap: true,
           itemBuilder: (context, index) {
