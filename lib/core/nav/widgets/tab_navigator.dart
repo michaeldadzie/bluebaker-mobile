@@ -50,7 +50,16 @@ class TabNavigator extends StatelessWidget {
   Widget _getScreen(BuildContext context, BottomNavItem? item) {
     switch (item) {
       case BottomNavItem.home:
-        return const Home();
+        return MultiBlocProvider(providers: [
+          BlocProvider<BlueBakerBloc>(
+            create: (context) => BlueBakerBloc(
+              authBloc: context.read<AuthBloc>(),
+              blueBakerRepository: context.read<BlueBakerRepository>(),
+            )
+              ..add(FetchCollections())
+              ..add(FetchBlueBaker()),
+          ),
+        ], child: const Home());
       case BottomNavItem.explore:
         return const Explore();
       case BottomNavItem.bluebaker:
