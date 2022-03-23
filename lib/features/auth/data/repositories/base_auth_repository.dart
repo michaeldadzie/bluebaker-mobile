@@ -12,5 +12,6 @@ abstract class BaseAuthRepository {
     required String email,
     required String password,
   });
+  Future<auth.User?> logInAnonymously();
   Future<void> logOut();
 }
