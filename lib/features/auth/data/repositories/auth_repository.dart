@@ -29,11 +29,10 @@ class AuthRepository extends BaseAuthRepository {
       final credential = await _fireBaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
       final user = credential.user;
-      _firebaseFirestore.collection(Paths.users).doc(user!.uid).set({
-        'name': name,
-        'email': email,
-        'joined': joined
-      });
+      _firebaseFirestore
+          .collection(Paths.users)
+          .doc(user!.uid)
+          .set({'name': name, 'email': email, 'joined': joined});
       return user;
     } on auth.FirebaseAuthException catch (error) {
       throw Failure(code: error.code, message: error.message!);
@@ -52,6 +51,18 @@ class AuthRepository extends BaseAuthRepository {
         email: email,
         password: password,
       );
+      return credential.user!;
+    } on auth.FirebaseAuthException catch (error) {
+      throw Failure(code: error.code, message: error.message!);
+    } on PlatformException catch (error) {
+      throw Failure(code: error.code, message: error.message!);
+    }
+  }
+
+  @override
+  Future<auth.User> logInAnonymously() async {
+    try {
+      final credential = await _fireBaseAuth.signInAnonymously();
       return credential.user!;
     } on auth.FirebaseAuthException catch (error) {
       throw Failure(code: error.code, message: error.message!);
