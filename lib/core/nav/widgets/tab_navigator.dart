@@ -50,16 +50,19 @@ class TabNavigator extends StatelessWidget {
   Widget _getScreen(BuildContext context, BottomNavItem? item) {
     switch (item) {
       case BottomNavItem.home:
-        return MultiBlocProvider(providers: [
-          BlocProvider<BlueBakerBloc>(
-            create: (context) => BlueBakerBloc(
-              authBloc: context.read<AuthBloc>(),
-              blueBakerRepository: context.read<BlueBakerRepository>(),
-            )
-              ..add(FetchCollections())
-              ..add(FetchBlueBaker()),
-          ),
-        ], child: const Home());
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider<BlueBakerBloc>(
+              create: (context) => BlueBakerBloc(
+                authBloc: context.read<AuthBloc>(),
+                blueBakerRepository: context.read<BlueBakerRepository>(),
+              )
+                ..add(FetchCollections())
+                ..add(FetchBlueBaker()),
+            ),
+          ],
+          child: const Home(),
+        );
       case BottomNavItem.explore:
         return const Explore();
       case BottomNavItem.bluebaker:
@@ -67,32 +70,45 @@ class TabNavigator extends StatelessWidget {
           create: (context) => BlueBakerBloc(
             authBloc: context.read<AuthBloc>(),
             blueBakerRepository: context.read<BlueBakerRepository>(),
-          )..add(FetchBlueBaker()),
+          )..add(
+              FetchBlueBaker(),
+            ),
           child: const BlueBaker(),
         );
       case BottomNavItem.wishlist:
-        return MultiBlocProvider(providers: [
-          BlocProvider<WishlistBloc>(
-            create: (context) => WishlistBloc(
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider<WishlistBloc>(
+              create: (context) => WishlistBloc(
                 authBloc: context.read<AuthBloc>(),
-                blueBakerRepository: context.read<BlueBakerRepository>())
-              ..add(FetchWishlist()),
-          ),
-          BlocProvider<ProfileBloc>(
-            create: (context) => ProfileBloc(
-              authBloc: context.read<AuthBloc>(),
-              userRepository: context.read<UserRepository>(),
-            )..add(ProfileLoadUser(
-                userId: context.read<AuthBloc>().state.user!.uid)),
-          )
-        ], child: const WishList());
+                blueBakerRepository: context.read<BlueBakerRepository>(),
+              )..add(
+                  FetchWishlist(),
+                ),
+            ),
+            BlocProvider<ProfileBloc>(
+              create: (context) => ProfileBloc(
+                authBloc: context.read<AuthBloc>(),
+                userRepository: context.read<UserRepository>(),
+              )..add(
+                  ProfileLoadUser(
+                    userId: context.read<AuthBloc>().state.user!.uid,
+                  ),
+                ),
+            )
+          ],
+          child: const WishList(),
+        );
       case BottomNavItem.account:
         return BlocProvider<ProfileBloc>(
           create: (context) => ProfileBloc(
             authBloc: context.read<AuthBloc>(),
             userRepository: context.read<UserRepository>(),
-          )..add(ProfileLoadUser(
-              userId: context.read<AuthBloc>().state.user!.uid)),
+          )..add(
+              ProfileLoadUser(
+                userId: context.read<AuthBloc>().state.user!.uid,
+              ),
+            ),
           child: const Account(),
         );
       default:
