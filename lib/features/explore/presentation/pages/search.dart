@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,8 +10,6 @@ import 'package:bluebaker/features/auth/presentation/utils/const.dart';
 import 'package:bluebaker/features/bluebaker/data/repositories/bluebaker_repository.dart';
 import 'package:bluebaker/features/explore/presentation/cubit/search_cubit.dart';
 import 'package:bluebaker/features/explore/presentation/widgets/search_item.dart';
-
-
 
 class Search extends StatefulWidget {
   static const String routeName = '/search';
@@ -30,7 +30,6 @@ class Search extends StatefulWidget {
       ),
     );
   }
-
 
   @override
   _SearchState createState() => _SearchState();
@@ -163,8 +162,9 @@ class _SearchState extends State<Search> {
                         child: GridView.builder(
                           padding: EdgeInsets.all(20.h),
                           gridDelegate:
-                              const SliverGridDelegateWithMaxCrossAxisExtent(
-                            childAspectRatio: 2 / 3.2,
+                              SliverGridDelegateWithMaxCrossAxisExtent(
+                            childAspectRatio:
+                                Platform.isIOS ? 2 / 3.6 : 2 / 3.2,
                             maxCrossAxisExtent: 200,
                             crossAxisSpacing: 20,
                             mainAxisSpacing: 20,

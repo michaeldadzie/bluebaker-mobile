@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(const Duration(seconds: 7), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 15), (timer) {
       if (currentVerticalPage < 2) {
         currentVerticalPage++;
       } else {
@@ -142,8 +142,8 @@ class _HomeState extends State<Home> {
                                       Expanded(
                                         child: _buildBlueBakerPageView(
                                           state,
-                                          6,
-                                          6,
+                                          0,
+                                          0,
                                         ),
                                       ),
                                     ],

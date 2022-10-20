@@ -188,55 +188,33 @@ class EditProfile extends StatelessWidget {
                                       }
                                     },
                                   ),
-                                  SizedBox(height: 20.h),
-                                  // Text(
-                                  //   'Username',
-                                  //   style: GoogleFonts.lato(fontSize: 15.sp),
-                                  // ),
                                   // SizedBox(height: 20.h),
-                                  TextFormField(
-                                    // initialValue: user.username,
-                                    // textCapitalization: TextCapitalization.characters,
-                                    // controller: _username,
-                                    keyboardType: TextInputType.name,
-                                    // onFieldSubmitted: (_) => node.unfocus(),
-                                    decoration:
-                                        textFormFieldDecoration.copyWith(
-                                      hintText: 'Username',
-                                      fillColor: Theme.of(context).hoverColor,
-                                    ),
-                                    style: GoogleFonts.lato(
-                                      fontSize: 15.sp,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.grey.shade600,
-                                    ),
-                                    onChanged: (value) => context
-                                        .read<EditProfileCubit>()
-                                        .usernameChanged(value),
-                                    validator: (String? v) {
-                                      if (v!.isValidUserName) {
-                                        return null;
-                                      } else {
-                                        return 'Please enter a valid username';
-                                      }
-                                    },
-                                  ),
-                                  SizedBox(height: 20.h),
-                                  // Text(
-                                  //   'This is the name that shows on your jersey',
+                                  // TextFormField(
+                                  //   keyboardType: TextInputType.name,
+                                  //   // onFieldSubmitted: (_) => node.unfocus(),
+                                  //   decoration:
+                                  //       textFormFieldDecoration.copyWith(
+                                  //     hintText: 'Username',
+                                  //     fillColor: Theme.of(context).hoverColor,
+                                  //   ),
                                   //   style: GoogleFonts.lato(
-                                  //       fontSize: 13, color: Colors.red.shade700),
+                                  //     fontSize: 15.sp,
+                                  //     fontWeight: FontWeight.w400,
+                                  //     color: Colors.grey.shade600,
+                                  //   ),
+                                  //   onChanged: (value) => context
+                                  //       .read<EditProfileCubit>()
+                                  //       .usernameChanged(value),
+                                  //   validator: (String? v) {
+                                  //     if (v!.isValidUserName) {
+                                  //       return null;
+                                  //     } else {
+                                  //       return 'Please enter a valid username';
+                                  //     }
+                                  //   },
                                   // ),
-                                  // const SizedBox(height: 20.h),
-                                  // Text(
-                                  //   'Region of residence',
-                                  //   style: GoogleFonts.lato(fontSize: 15.sp),
-                                  // ),
-                                  // SizedBox(height: 20.h),
+                                  SizedBox(height: 20.h),
                                   TextFormField(
-                                    // initialValue: user.country,
-                                    // textCapitalization: TextCapitalization.characters,
-                                    // controller: _country,
                                     keyboardType: TextInputType.name,
                                     // onFieldSubmitted: (_) => node.unfocus(),
                                     decoration:
@@ -261,15 +239,7 @@ class EditProfile extends StatelessWidget {
                                     },
                                   ),
                                   SizedBox(height: 20.h),
-                                  // Text(
-                                  //   'Jersey Number',
-                                  //   style: GoogleFonts.lato(fontSize: 15.sp),
-                                  // ),
-                                  // SizedBox(height: 20.h),
                                   TextFormField(
-                                    // initialValue: user.telephone,
-                                    // textCapitalization: TextCapitalization.characters,
-                                    // controller: _telephone,
                                     keyboardType: TextInputType.number,
                                     // onFieldSubmitted: (_) => node.unfocus(),
                                     decoration:
@@ -303,7 +273,8 @@ class EditProfile extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 20.h, left: 20.w, right: 20.w),
+                    padding:
+                        EdgeInsets.only(bottom: 20.h, left: 20.w, right: 20.w),
                     child: Column(
                       children: [
                         SizedBox(height: 35.h),

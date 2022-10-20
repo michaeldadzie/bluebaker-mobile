@@ -26,7 +26,7 @@ class BottomNavScreen extends StatelessWidget {
   final Map<BottomNavItem, GlobalKey<NavigatorState>> navigatorKeys = {
     BottomNavItem.home: GlobalKey<NavigatorState>(),
     BottomNavItem.explore: GlobalKey<NavigatorState>(),
-    BottomNavItem.bluebaker: GlobalKey<NavigatorState>(),
+    // BottomNavItem.bluebaker: GlobalKey<NavigatorState>(),
     BottomNavItem.wishlist: GlobalKey<NavigatorState>(),
     BottomNavItem.account: GlobalKey<NavigatorState>(),
   };
@@ -34,7 +34,7 @@ class BottomNavScreen extends StatelessWidget {
   final Map<BottomNavItem, IconData> items = {
     BottomNavItem.home: FeatherIcons.home,
     BottomNavItem.explore: FeatherIcons.search,
-    BottomNavItem.bluebaker: BlueBakerIcon.logo_2,
+    // BottomNavItem.bluebaker: BlueBakerIcon.logo_2,
     BottomNavItem.wishlist: FeatherIcons.bookmark,
     BottomNavItem.account: FeatherIcons.user,
   };

@@ -64,8 +64,6 @@ class TabNavigator extends StatelessWidget {
           child: const Home(),
         );
       case BottomNavItem.explore:
-        return const Explore();
-      case BottomNavItem.bluebaker:
         return BlocProvider<BlueBakerBloc>(
           create: (context) => BlueBakerBloc(
             authBloc: context.read<AuthBloc>(),
@@ -73,8 +71,18 @@ class TabNavigator extends StatelessWidget {
           )..add(
               FetchBlueBaker(),
             ),
-          child: const BlueBaker(),
+          child: const Explore(),
         );
+      // case BottomNavItem.bluebaker:
+      //   return BlocProvider<BlueBakerBloc>(
+      //     create: (context) => BlueBakerBloc(
+      //       authBloc: context.read<AuthBloc>(),
+      //       blueBakerRepository: context.read<BlueBakerRepository>(),
+      //     )..add(
+      //         FetchBlueBaker(),
+      //       ),
+      //     child: const BlueBaker(),
+      //   );
       case BottomNavItem.wishlist:
         return MultiBlocProvider(
           providers: [

@@ -1,7 +1,7 @@
 enum BottomNavItem {
   home,
   explore,
-  bluebaker,
+  // bluebaker,
   wishlist,
   account,
 }

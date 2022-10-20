@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bluebaker/features/auth/presentation/cubit/anon/anon_cubit.dart';
 import 'package:bluebaker/features/auth/presentation/pages/login.dart';
 import 'package:bluebaker/features/auth/presentation/pages/signup.dart';
@@ -51,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
                 Container(
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/swim.png'),
+                      image: AssetImage('assets/images/welcome.png'),
                       fit: BoxFit.cover,
                       colorFilter: ColorFilter.mode(
                         Colors.black45,
@@ -80,7 +82,7 @@ class WelcomeScreen extends StatelessWidget {
                             ),
                             SizedBox(height: 10.h),
                             Text(
-                              'Custom made garments, Ready to wear! Styling',
+                              'Custom made garments, Ready to wear!',
                               style: GoogleFonts.poppins(
                                 fontSize: 15.sp,
                                 color: const Color.fromRGBO(205, 205, 210, 1),
@@ -116,38 +118,40 @@ class WelcomeScreen extends StatelessWidget {
                                     .pushNamed(LoginScreen.routeName);
                               },
                             ),
-                            SizedBox(height: 20.h),
+                            Platform.isIOS
+                                ? SizedBox(height: 40.h)
+                                : SizedBox(height: 20.h),
                           ],
                         ),
                       ),
                     ],
                   ),
                 ),
-                Positioned(
-                  top: 20.h,
-                  left: 0.h,
-                  right: 20.w,
-                  child: AppBar(
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
-                    actions: [
-                      GestureDetector(
-                        onTap: () {
-                          _loginAnonymously(
-                              context, state.status == AnonStatus.submitting);
-                        },
-                        child: Text(
-                          'Continue as guest',
-                          style: GoogleFonts.poppins(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                // Positioned(
+                //   top: 20.h,
+                //   left: 0.h,
+                //   right: 20.w,
+                //   child: AppBar(
+                //     backgroundColor: Colors.transparent,
+                //     elevation: 0,
+                //     actions: [
+                //       GestureDetector(
+                //         onTap: () {
+                //           _loginAnonymously(
+                //               context, state.status == AnonStatus.submitting);
+                //         },
+                //         child: Text(
+                //           'Continue as guest',
+                //           style: GoogleFonts.poppins(
+                //             fontSize: 12.sp,
+                //             fontWeight: FontWeight.w600,
+                //             color: Colors.white,
+                //           ),
+                //         ),
+                //       )
+                //     ],
+                //   ),
+                // ),
               ],
             ),
           );

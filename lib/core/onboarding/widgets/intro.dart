@@ -24,12 +24,12 @@ class _IntroState extends State<Intro> {
     },
     {
       "text1": "Explore BlueBaker Fashion",
-      "text2": "Explore the 2021's newest fashion with our new collection",
-      "image": "assets/images/mask.png"
+      "text2": "Explore the newest fashion with our new collection",
+      "image": "assets/images/two.png"
     },
     {
-      "text1": "Explore BlueBaker Fashion",
-      "text2": "Explore the 2021's newest fashion with our new collection",
+      "text1": "Best Price Guaranteed",
+      "text2": "You heard it right! Lower prices for all our products",
       "image": "assets/images/man.png"
     },
   ];

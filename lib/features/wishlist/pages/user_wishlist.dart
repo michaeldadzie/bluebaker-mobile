@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:bluebaker/features/auth/presentation/bloc/auth/auth_bloc.dart';
 import 'package:bluebaker/features/bluebaker/data/repositories/bluebaker_repository.dart';
@@ -88,8 +89,8 @@ class _UserWishlistState extends State<UserWishlist> {
       default:
         return GridView.builder(
           padding: EdgeInsets.all(20.h),
-          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            childAspectRatio: 2 / 3.2,
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            childAspectRatio: Platform.isIOS ? 2 / 3.6 : 2 / 3.2,
             maxCrossAxisExtent: 200,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20,

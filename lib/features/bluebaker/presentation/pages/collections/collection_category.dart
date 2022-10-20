@@ -176,7 +176,7 @@ class _CollectionCategoryState extends State<CollectionCategory> {
         return GridView.builder(
           padding: EdgeInsets.all(20.h),
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            childAspectRatio: 2 / 3.2,
+            childAspectRatio: 2 / 3.6,
             maxCrossAxisExtent: 200,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20,

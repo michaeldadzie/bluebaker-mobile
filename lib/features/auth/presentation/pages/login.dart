@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bluebaker/core/widgets/error_dialog.dart';
 import 'package:bluebaker/features/auth/data/repositories/auth_repository.dart';
 import 'package:bluebaker/features/auth/presentation/cubit/login/login_cubit.dart';
@@ -167,7 +169,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                        bottom: 20.w,
+                        bottom: Platform.isIOS ? 40.h : 20.h,
                         left: 20.w,
                         right: 20.h,
                       ),
