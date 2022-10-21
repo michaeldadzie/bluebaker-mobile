@@ -1,16 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
-
-import 'package:bluebaker/features/auth/presentation/bloc/auth/auth_bloc.dart';
-import 'package:bluebaker/features/bluebaker/data/repositories/bluebaker_repository.dart';
-import 'package:bluebaker/features/bluebaker/presentation/widgets/collection_category_item.dart';
-import 'package:bluebaker/features/wishlist/bloc/wishlist_bloc.dart';
-import 'package:bluebaker/features/wishlist/widgets/user_wishlist_item.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:bluebaker/exports.dart';
 
 class UserWishlistArgs {
   final String title;

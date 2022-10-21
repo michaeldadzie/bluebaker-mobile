@@ -1,20 +1,4 @@
-import 'package:bluebaker/core/widgets/error_dialog.dart';
-import 'package:bluebaker/features/account/data/models/user_model.dart';
-import 'package:bluebaker/features/account/data/repositories/storage/storage_repository.dart';
-import 'package:bluebaker/features/account/data/repositories/user/user_repository.dart';
-import 'package:bluebaker/features/account/presentation/bloc/profile_bloc.dart';
-import 'package:bluebaker/features/account/presentation/cubit/edit_profile_cubit.dart';
-import 'package:bluebaker/features/account/presentation/helpers/image_helper.dart';
-import 'package:bluebaker/features/account/presentation/widgets/profile_image.dart';
-import 'package:bluebaker/features/auth/presentation/utils/const.dart';
-import 'package:bluebaker/features/auth/presentation/widgets/custom_button.dart';
-import 'package:bluebaker/features/auth/presentation/widgets/custom_progress_indicator.dart';
-import 'package:bluebaker/features/auth/presentation/extension/form_extension.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:image_cropper/image_cropper.dart';
+import 'package:bluebaker/exports.dart';
 
 class EditProfileArgs {
   final BuildContext context;

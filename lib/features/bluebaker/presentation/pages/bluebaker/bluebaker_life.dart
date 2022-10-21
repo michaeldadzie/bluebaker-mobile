@@ -1,9 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../collections.dart';
-
+import 'package:bluebaker/exports.dart';
 
 class BlueBakerLife extends StatelessWidget {
   static const String routeName = '/bluebaker-life';

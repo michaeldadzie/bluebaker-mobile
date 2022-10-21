@@ -1,16 +1,4 @@
-import 'package:bluebaker/features/explore/presentation/pages/search.dart';
-import 'package:feather_icons/feather_icons.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../../../../core/widgets/error_dialog.dart';
-import '../../../auth/presentation/utils/const.dart';
-import '../../../bluebaker/presentation/bloc/bluebaker_bloc.dart';
-import '../../../bluebaker/presentation/pages/bluebaker/bluebaker_life.dart';
-import '../../../bluebaker/presentation/widgets/bluebaker_alt_item.dart';
-import '../../../bluebaker/presentation/widgets/bluebaker_item.dart';
+import 'package:bluebaker/exports.dart';
 
 class Explore extends StatefulWidget {
   const Explore({Key? key}) : super(key: key);

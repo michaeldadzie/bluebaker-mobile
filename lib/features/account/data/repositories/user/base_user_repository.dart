@@ -1,4 +1,4 @@
-import 'package:bluebaker/features/account/data/models/user_model.dart';
+import 'package:bluebaker/exports.dart';
 
 abstract class BaseUserRepository {
   Future<User> getUserWithId({required String userId});

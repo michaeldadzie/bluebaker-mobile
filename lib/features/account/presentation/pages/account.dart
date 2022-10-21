@@ -1,16 +1,4 @@
-import 'package:bluebaker/core/widgets/error_dialog.dart';
-import 'package:bluebaker/features/account/presentation/bloc/profile_bloc.dart';
-import 'package:bluebaker/features/account/presentation/pages/account_details.dart';
-import 'package:bluebaker/features/account/presentation/pages/privacy_policy.dart';
-import 'package:bluebaker/features/account/presentation/widgets/list_tile.dart';
-import 'package:bluebaker/features/account/presentation/widgets/profile_image.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import 'edit_profile.dart';
+import 'package:bluebaker/exports.dart';
 
 class Account extends StatefulWidget {
   const Account({Key? key}) : super(key: key);

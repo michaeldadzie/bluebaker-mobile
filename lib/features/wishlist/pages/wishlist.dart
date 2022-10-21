@@ -1,11 +1,4 @@
-import 'package:bluebaker/features/account/presentation/bloc/profile_bloc.dart';
-import 'package:bluebaker/features/wishlist/bloc/wishlist_bloc.dart';
-import 'package:bluebaker/features/wishlist/pages/user_wishlist.dart';
-import 'package:bluebaker/features/wishlist/widgets/wishlist_item.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:bluebaker/exports.dart';
 
 class WishList extends StatefulWidget {
   const WishList({Key? key}) : super(key: key);

@@ -1,15 +1,6 @@
 import 'dart:io';
 
-import 'package:feather_icons/feather_icons.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import 'package:bluebaker/features/auth/presentation/utils/const.dart';
-import 'package:bluebaker/features/bluebaker/data/repositories/bluebaker_repository.dart';
-import 'package:bluebaker/features/explore/presentation/cubit/search_cubit.dart';
-import 'package:bluebaker/features/explore/presentation/widgets/search_item.dart';
+import 'package:bluebaker/exports.dart';
 
 class Search extends StatefulWidget {
   static const String routeName = '/search';

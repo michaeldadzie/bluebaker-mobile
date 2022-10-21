@@ -1,5 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:equatable/equatable.dart';
+import 'package:bluebaker/exports.dart';
 
 class User extends Equatable {
   final String id;
@@ -110,5 +109,4 @@ class User extends Equatable {
       joined: data['joined'] as Timestamp,
     );
   }
-  
 }

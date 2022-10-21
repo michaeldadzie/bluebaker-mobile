@@ -1,9 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:intl/intl.dart';
-import '/features/auth/data/models/failure.dart';
-import '/features/auth/data/repositories/auth_repository.dart';
-
+import 'package:bluebaker/exports.dart';
 
 part 'signup_state.dart';
 
@@ -31,11 +26,10 @@ class SignupCubit extends Cubit<SignupState> {
     emit(state.copyWith(status: SignupStatus.submitting));
     try {
       await _authRepository.signUpWithEmailAndPassword(
-        name: state.name,
-        email: state.email,
-        password: state.password,
-        joined: state.joined
-      );
+          name: state.name,
+          email: state.email,
+          password: state.password,
+          joined: state.joined);
       emit(state.copyWith(status: SignupStatus.success));
     } on Failure catch (error) {
       emit(state.copyWith(failure: error, status: SignupStatus.error));

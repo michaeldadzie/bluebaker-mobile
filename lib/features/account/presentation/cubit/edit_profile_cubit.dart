@@ -1,13 +1,5 @@
 import 'dart:io';
-
-import 'package:bloc/bloc.dart';
-import 'package:bluebaker/features/account/data/repositories/storage/storage_repository.dart';
-import 'package:bluebaker/features/account/data/repositories/user/user_repository.dart';
-import 'package:bluebaker/features/account/presentation/bloc/profile_bloc.dart';
-import 'package:bluebaker/features/auth/data/models/failure.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:equatable/equatable.dart';
-
+import 'package:bluebaker/exports.dart';
 
 part 'edit_profile_state.dart';
 

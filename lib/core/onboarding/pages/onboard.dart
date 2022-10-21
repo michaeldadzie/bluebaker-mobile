@@ -1,8 +1,4 @@
-import 'package:bluebaker/core/nav/page/bottom_nav_screen.dart';
-import 'package:bluebaker/core/onboarding/widgets/intro.dart';
-import 'package:bluebaker/features/auth/presentation/bloc/auth/auth_bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:bluebaker/exports.dart';
 
 class OnboardScreen extends StatelessWidget {
   static const String routeName = '/onboard';

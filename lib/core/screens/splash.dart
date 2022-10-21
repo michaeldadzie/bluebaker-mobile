@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '/core/nav/page/bottom_nav_screen.dart';
-import '/features/auth/presentation/bloc/auth/auth_bloc.dart';
-import '/features/auth/presentation/pages/welcome.dart';
+import 'package:bluebaker/exports.dart';
 
 class SplashScreen extends StatelessWidget {
   static const String routeName = '/splash';

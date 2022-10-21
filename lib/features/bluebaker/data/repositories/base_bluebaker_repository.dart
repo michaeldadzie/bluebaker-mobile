@@ -1,6 +1,4 @@
-import 'package:bluebaker/features/explore/data/models/collection_model.dart';
-import 'package:bluebaker/features/bluebaker/data/models/item_model.dart';
-import 'package:bluebaker/features/bluebaker/data/models/bluebaker_model.dart';
+import 'package:bluebaker/exports.dart';
 
 abstract class BaseBlueBakerRepository {
   // General BlueBaker Items & Collections

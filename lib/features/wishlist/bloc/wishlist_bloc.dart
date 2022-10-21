@@ -1,9 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:bluebaker/features/auth/data/models/failure.dart';
-import 'package:bluebaker/features/auth/presentation/bloc/auth/auth_bloc.dart';
-import 'package:bluebaker/features/bluebaker/data/repositories/bluebaker_repository.dart';
-import 'package:bluebaker/features/bluebaker/data/models/item_model.dart';
-import 'package:equatable/equatable.dart';
+import 'package:bluebaker/exports.dart';
 
 part 'wishlist_event.dart';
 part 'wishlist_state.dart';

@@ -1,8 +1,5 @@
-import 'package:bluebaker/core/config/paths.dart';
-import 'package:bluebaker/features/account/data/models/user_model.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:bluebaker/exports.dart';
 import 'base_user_repository.dart';
-
 
 class UserRepository extends BaseUserRepository {
   final FirebaseFirestore _firebaseFirestore;

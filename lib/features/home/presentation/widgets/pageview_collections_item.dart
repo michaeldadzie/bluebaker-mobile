@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
-import '../../../bluebaker/presentation/pages/collections/collection_category.dart';
+import 'package:bluebaker/exports.dart';
 
 class PageViewCollectionsItem extends StatelessWidget {
   const PageViewCollectionsItem({

@@ -1,5 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:equatable/equatable.dart';
+import 'package:bluebaker/exports.dart';
 
 class Item extends Equatable {
   final String id;

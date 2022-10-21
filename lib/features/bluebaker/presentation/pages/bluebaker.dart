@@ -1,12 +1,4 @@
-import 'package:bluebaker/core/widgets/error_dialog.dart';
-import 'package:bluebaker/features/bluebaker/presentation/bloc/bluebaker_bloc.dart';
-import 'package:bluebaker/features/bluebaker/presentation/pages/bluebaker/bluebaker_life.dart';
-import 'package:bluebaker/features/bluebaker/presentation/widgets/bluebaker_alt_item.dart';
-import 'package:bluebaker/features/bluebaker/presentation/widgets/bluebaker_item.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:bluebaker/exports.dart';
 
 class BlueBaker extends StatefulWidget {
   const BlueBaker({Key? key}) : super(key: key);

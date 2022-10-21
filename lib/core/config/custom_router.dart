@@ -1,23 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../core/nav/page/bottom_nav_screen.dart';
-import '../../core/onboarding/pages/onboard.dart';
-import '../../core/screens/error.dart';
-import '../../core/screens/splash.dart';
-import '../../features/account/presentation/pages/account_details.dart';
-import '../../features/account/presentation/pages/edit_profile.dart';
-import '../../features/account/presentation/pages/privacy_policy.dart';
-import '../../features/auth/presentation/pages/login.dart';
-import '../../features/auth/presentation/pages/signup.dart';
-import '../../features/auth/presentation/pages/welcome.dart';
-import '../../features/bluebaker/presentation/pages/bluebaker/bluebaker_category.dart';
-import '../../features/bluebaker/presentation/pages/bluebaker/bluebaker_life.dart';
-import '../../features/explore/presentation/pages/search.dart';
-import '../../features/explore/presentation/pages/search_trends.dart';
-import '../../features/bluebaker/presentation/pages/videos.dart';
-import '../../features/wishlist/pages/user_wishlist.dart';
-import '../../features/bluebaker/presentation/pages/collections/collection_category.dart';
-import '../../features/bluebaker/presentation/pages/collections.dart';
-import '../../features/bluebaker/presentation/pages/collections/item_detail.dart';
+import 'package:bluebaker/exports.dart';
 
 class CustomRouter {
   static Route onGenerateRoute(RouteSettings settings) {

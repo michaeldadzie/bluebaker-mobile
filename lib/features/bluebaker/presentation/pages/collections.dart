@@ -1,13 +1,4 @@
-import 'package:bluebaker/core/widgets/error_dialog.dart';
-import 'package:bluebaker/features/auth/presentation/bloc/auth/auth_bloc.dart';
-import 'package:bluebaker/features/bluebaker/data/repositories/bluebaker_repository.dart';
-import 'package:bluebaker/features/bluebaker/presentation/bloc/bluebaker_bloc.dart';
-import 'package:bluebaker/features/bluebaker/presentation/widgets/collection_item.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:bluebaker/exports.dart';
 
 class Collections extends StatefulWidget {
   static const String routeName = '/collections';

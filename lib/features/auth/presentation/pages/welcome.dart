@@ -1,16 +1,5 @@
 import 'dart:io';
-
-import 'package:bluebaker/features/auth/presentation/cubit/anon/anon_cubit.dart';
-import 'package:bluebaker/features/auth/presentation/pages/login.dart';
-import 'package:bluebaker/features/auth/presentation/pages/signup.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../core/widgets/error_dialog.dart';
-import '../../data/repositories/auth_repository.dart';
-import '/features/auth/presentation/widgets/custom_button.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:bluebaker/exports.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static const String routeName = '/welcome';
